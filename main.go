@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"os/exec"
 
 	"github.com/kotaoue/go-tput"
@@ -21,9 +20,11 @@ func main() {
 	// out, err := exec.Command("set", "-c", "tput setaf 2").Output()
 
 	cmd := exec.Command("tput", "setaf", "2")
-	stdin, _ := cmd.StdinPipe()
-	io.WriteString(stdin, "hoge")
-	stdin.Close()
+	/*
+		stdin, _ := cmd.StdinPipe()
+		io.WriteString(stdin, "hoge")
+		stdin.Close()
+	*/
 	out, _ := cmd.Output()
 	fmt.Printf("結果: %s", out)
 
