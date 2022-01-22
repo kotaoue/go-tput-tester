@@ -25,10 +25,8 @@ func main() {
 		io.WriteString(stdin, "hoge")
 		stdin.Close()
 	*/
-	// out, _ := cmd.Output()
-	// fmt.Printf("結果: %s", out)
-
-	cmd.Run()
+	out, _ := cmd.Output()
+	fmt.Printf("%s", out)
 
 	fmt.Println("after")
 }
