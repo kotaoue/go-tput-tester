@@ -1,7 +1,15 @@
 package main
 
-import "github.com/kotaoue/go-tput"
+import (
+	"fmt"
+
+	"github.com/kotaoue/go-tput"
+)
 
 func main() {
+	// Cols
+	cols, _ := tput.Cols()
+	fmt.Printf("cols: %d\n", cols)
+
 	tput.HR()
 }
