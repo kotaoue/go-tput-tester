@@ -14,7 +14,7 @@ func main() {
 
 	tput.HR()
 
-	fmt.Println("before")
+	fmt.Println("step 1")
 	// sh.Command("tput", "setaf", strconv.Itoa(1)).Run()
 	// out, err := exec.Command("set", "-c", "tput setaf 2").Output()
 	// out, err := exec.Command("set", "-c", "tput setaf 2").Output()
@@ -28,5 +28,5 @@ func main() {
 	out, _ := cmd.Output()
 	fmt.Printf("%s", out)
 
-	fmt.Println("after")
+	fmt.Println("step 2")
 }
