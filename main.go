@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"io"
+	"os/exec"
 
 	"github.com/kotaoue/go-tput"
 )
@@ -12,4 +14,18 @@ func main() {
 	fmt.Printf("cols: %d\n", cols)
 
 	tput.HR()
+
+	fmt.Println("before")
+	// sh.Command("tput", "setaf", strconv.Itoa(1)).Run()
+	// out, err := exec.Command("set", "-c", "tput setaf 2").Output()
+	// out, err := exec.Command("set", "-c", "tput setaf 2").Output()
+
+	cmd := exec.Command("tput", "setaf", "2")
+	stdin, _ := cmd.StdinPipe()
+	io.WriteString(stdin, "hoge")
+	stdin.Close()
+	out, _ := cmd.Output()
+	fmt.Printf("結果: %s", out)
+
+	fmt.Println("after")
 }
