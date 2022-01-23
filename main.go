@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os/exec"
-	"time"
 
 	"github.com/kotaoue/go-tput"
 )
@@ -28,7 +27,6 @@ func main() {
 	*/
 	cmd.Output()
 	// fmt.Printf("%s", out)
-	time.Sleep(1 * time.Second)
 
 	fmt.Println("step 2")
 	fmt.Println("step 3")
