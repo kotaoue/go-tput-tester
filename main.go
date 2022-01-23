@@ -25,8 +25,9 @@ func main() {
 		io.WriteString(stdin, "hoge")
 		stdin.Close()
 	*/
-	out, _ := cmd.Output()
+	out, err := cmd.Output()
 	fmt.Printf("%s", out)
+	fmt.Println(err)
 
 	fmt.Println("step 2")
 	fmt.Println("step 3")
