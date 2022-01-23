@@ -46,6 +46,8 @@ func Main() error {
 			return err
 		}
 		fmt.Printf("byte: %s color: %d", b, i)
+
+		tput.Sgr0()
 		return nil
 	}
 	return nil
