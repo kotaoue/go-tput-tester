@@ -16,11 +16,11 @@ func main() {
 
 	fmt.Println("step 1")
 	out, err := exec.Command("tput", "setaf", "2").Output()
+	fmt.Println("step 2")
 	fmt.Printf("%s", out)
 
 	tput.Setaf(tput.Red)
 	fmt.Println(err)
 
-	fmt.Println("step 2")
 	fmt.Println("step 3")
 }
