@@ -18,6 +18,7 @@ func main() {
 	// out, err := exec.Command("set", "-c", "tput setaf 2").Output()
 	out, err := exec.Command("sh", "-c", "tput setaf 2").Output()
 	// out, err := exec.Command("tput", "setaf", "2").Output()
+
 	fmt.Printf("%s", out)
 	fmt.Println(err)
 
