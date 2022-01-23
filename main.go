@@ -44,8 +44,14 @@ func Main() error {
 			return err
 		}
 		fmt.Println("set underline")
-
 		tput.Sgr0()
+
+		var opt []*tput.Option
+		opt = append(opt, &tput.Option{Attribute: tput.TextColor, Color: tput.Cyan})
+		opt = append(opt, &tput.Option{Attribute: tput.UnderLine})
+		opt = append(opt, &tput.Option{Attribute: tput.BoldText})
+		tput.Printf(opt, "%s\n", "tput.Printf")
+
 		return nil
 	}
 	return nil
