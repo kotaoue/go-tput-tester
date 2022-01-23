@@ -19,13 +19,12 @@ func main() {
 	// out, err := exec.Command("set", "-c", "tput setaf 2").Output()
 	// out, err := exec.Command("set", "-c", "tput setaf 2").Output()
 
-	cmd := exec.Command("tput", "setaf", "2")
+	out, err := exec.Command("tput", "setaf", "2").Output()
 	/*
 		stdin, _ := cmd.StdinPipe()
 		io.WriteString(stdin, "hoge")
 		stdin.Close()
 	*/
-	out, err := cmd.Output()
 	fmt.Printf("%s", out)
 	fmt.Println(err)
 
