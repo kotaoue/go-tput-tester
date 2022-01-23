@@ -15,11 +15,9 @@ func main() {
 	tput.HR()
 
 	fmt.Println("step 1")
-	// sh.Command("tput", "setaf", strconv.Itoa(1)).Run()
 	// out, err := exec.Command("set", "-c", "tput setaf 2").Output()
-	// out, err := exec.Command("set", "-c", "tput setaf 2").Output()
-
-	out, err := exec.Command("tput", "setaf", "2").Output()
+	out, err := exec.Command("set", "-c", "tput setaf 2").Output()
+	// out, err := exec.Command("tput", "setaf", "2").Output()
 	/*
 		stdin, _ := cmd.StdinPipe()
 		io.WriteString(stdin, "hoge")
