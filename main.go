@@ -4,14 +4,12 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"strconv"
 
 	"github.com/kotaoue/go-tput"
 )
 
 var (
-	f = flag.String("func", "", "func name to run")
-	a = flag.String("arg", "", "argument of sending to function")
+	f = flag.String("fg", "Reading", "test target function group name")
 )
 
 func init() {
@@ -27,25 +25,25 @@ func main() {
 
 func Main() error {
 	switch *f {
-	case "Cols":
+	case "Reading":
 		c, err := tput.Cols()
 		if err != nil {
 			return err
 		}
-		fmt.Printf("Cols: %d", c)
-		return nil
-	case "HR":
+		fmt.Printf("cols: %d\n", c)
 		return tput.HR()
-	case "Setaf":
-		i, err := strconv.Atoi(*a)
+	case "Text":
+		_, err := tput.Setaf(tput.Red)
 		if err != nil {
 			return err
 		}
-		b, err := tput.Setaf(i)
+		fmt.Println("color is red")
+
+		_, err = tput.Smul()
 		if err != nil {
 			return err
 		}
-		fmt.Printf("byte: %s color: %d", b, i)
+		fmt.Println("set underline")
 
 		tput.Sgr0()
 		return nil

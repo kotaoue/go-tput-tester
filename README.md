@@ -3,14 +3,12 @@ This is the main.go when developing [kotaoue/go-tput](https://github.com/kotaoue
 
 ## Result
 ```ShellSession
-$ go run main.go -func=Cols
-Cols: 80
-```
-```ShellSession
-$ go run main.go -func=HR
+$ go run main.go -fg=Reading
+cols: 80
 --------------------------------------------------------------------------------
 ```
 ```ShellSession
-$ go run main.go -func=Setaf -arg=3
-byte:  color: 3
+$ go run main.go -fg=Text
+color is red
+set underline
 ```
