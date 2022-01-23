@@ -31,4 +31,5 @@ func main() {
 	time.Sleep(1 * time.Second)
 
 	fmt.Println("step 2")
+	fmt.Println("step 3")
 }
