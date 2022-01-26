@@ -25,14 +25,17 @@ func main() {
 
 func Main() error {
 	switch *f {
-	case "Reading":
+	case "clear":
+		_, err := tput.Clear()
+		return err
+	case "terminfo":
 		c, err := tput.Cols()
 		if err != nil {
 			return err
 		}
 		fmt.Printf("cols: %d\n", c)
 		return tput.HR()
-	case "Text":
+	case "effects":
 		_, err := tput.Setaf(tput.Red)
 		if err != nil {
 			return err
